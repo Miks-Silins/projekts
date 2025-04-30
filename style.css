@@ -71,3 +71,22 @@ button:hover {
   display: block; 
 }
 
+.products-grid {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  padding: 20px;
+  overflow-x: auto;
+  margin: 0 auto;
+}
+
+.product {
+  flex: 0 0 200px; /* Added to control the width of the product */
+}
+
+.product img {
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 4px;
+}
