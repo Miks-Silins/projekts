@@ -72,21 +72,37 @@ button:hover {
 }
 
 .products-grid {
-  display: flex;
-  flex-direction: row;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
   gap: 20px;
   padding: 20px;
-  overflow-x: auto;
+  background-color: #40E0D0;
   margin: 0 auto;
 }
 
 .product {
-  flex: 0 0 200px; /* Added to control the width of the product */
+  text-align: center;
+  padding: 10px;
 }
 
 .product img {
   width: 200px;
   height: 200px;
   object-fit: cover;
-  border-radius: 4px;
+  margin-bottom: 10px;
+}
+
+.product p {
+  margin: 5px 0;
+  font-weight: bold;
+}
+
+#products {
+  background-color: #40E0D0;
+}
+
+#products h1 {
+  color: black;
+  font-size: 3em;
+  margin: 20px 0;
 }
