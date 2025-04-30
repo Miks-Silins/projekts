@@ -1,16 +1,136 @@
 <!DOCTYPE html>
-<html>
 
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width">
-  <title>replit</title>
-  <link href="style.css" rel="stylesheet" type="text/css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dūmu Krāsns</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #87CEEB;
+        }
+        .navbar {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            background-color: #6B8E23;
+            padding: 10px;
+        }
+        .navbar button {
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            background-color: #ddd;
+            border-radius: 5px;
+        }
+        .navbar button:hover {
+            background-color: #bbb;
+        }
+        .section {
+            display: none;
+            padding: 20px;
+            background-color: #87CEEB;
+        }
+        .active {
+            display: block;
+        }
+    </style>
 </head>
-
 <body>
-  Hello world
-  <script src="script.js"></script>
-</body>
+    <div class="navbar">
+        <button onclick="showSection('about')">Par Mums</button>
+        <button onclick="showSection('products')">Mūsu Gaļa</button>
+        <button onclick="showSection('login')">Log In / Sign Up</button>
+        <button onclick="showSection('contact')">Beigas</button>
+    </div>
 
+    <div id="home" class="section active">
+        <h1>Dūmu Krāsns</h1>
+       
+        <img src="fermaa.png">
+         <img class="logopng" src="logo.png">
+        <img src="cukas.png">
+    </div>
+
+    <div id="about" class="section">
+        <h1>Par Mums</h1>
+        <p>Ģimenes uzņēmums kopš 1984. gada.</p>
+        <img src="gimene.png">
+        <p>2017. gadā atzīti par labāko Latvijas kūpinātavu.</p>
+        <img src="galina.png">
+        <img src="vistina.png">
+        <p>100% dabīga gaļa - vienmēr svaiga un garda.</p>
+    </div>
+
+    <div id="products" class="section">
+        <h1>Mūsu Gaļa</h1>
+        <div class="products">
+            <div class="product">
+                <img src="krutina.png">
+                <p>Kūpināta vistas krūtiņa</p>
+                <p><strong>12,99 euro/kg</strong></p>
+            </div>
+            <div class="product">
+                <img src=kajinas.png> 
+                <p>Kūpinātas vistas kājiņas</p>
+                <p><strong>9,99 euro/kg</strong></p>
+            </div>
+            <div class="product">
+                <img src=calis.png>
+                <p>Kūpināts cālis</p>
+                <p><strong>7,59 euro/kg</strong></p>
+            </div>
+            <div class="product">
+                <img src="https://www.khselect.lv/wp-content/uploads/2021/12/IMG_4929ak_sagriezta-fileja-ar-pipariem3_web_white-300x200.jpg">
+                <p>Kūpināts lasis</p>
+                <p><strong>10,79 euro/kg</strong></p>
+            </div>
+            <div class="product">
+                <img src=giross.png>
+                <p>Kūpināts vistas giross</p>
+                <p><strong>15,29 euro/kg</strong></p>
+            </div>
+        </div>
+    </div>
+    </div>
+
+    <div id="login" class="section">
+        <h2>Log in</h2>
+            <div class="input-group">
+                <label for="username">Username:</label>
+                <input type="text" id="username" name="username" required>
+            </div>
+            <div class="input-group">
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required>
+            </div>
+            <button onclick="login()">Login</button>
+            <div id="error-message" class="error-message"></div>
+    </div>
+        
+
+    <div id="contact" class="section">
+        <h1>Gaidīsim ciemos!</h1>
+        <p>Novēlam labu apetīti, bet ja ir jautājumi, droši raksti!</p>
+        <form action="index.html">
+            <textarea placeholder="Jūsu ziņa" required rows="4" cols="50"></textarea>
+              
+               <button onclick="sudziba()">Nosūtīt</button>
+           
+        <p>Kontakttālrunis: +371 23456782</p>
+        <img src="kupinatava.png">
+        <img src="chicken.png">
+    </div>
+
+    <script>
+        function showSection(sectionId) {
+            document.querySelectorAll('.section').forEach(section => {
+                section.classList.remove('active');
+            });
+            document.getElementById(sectionId).classList.add('active');
+        }
+    </script>
+    <script src="script.js"></script>
+</body>
 </html>
